@@ -1,11 +1,8 @@
 <div class='ui container'>
-  <h1><%= @trip.id ? 'Edit Trip' : 'New Trip' %></h1>
-  <%= form_for @trip, html: {class: 'ui form'} do |f| %>
+  <h1><%= @location.id ? 'Edit Location' : 'New Location' %></h1>
+  <%= form_for [@trip, @location], html: {class: 'ui form'} do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name, required: true %>
-  <br/>
-  <%= f.label :date %>
-  <%= f.date_field :date %>
   <br/>
   <br/>
   <%= f.submit class: 'ui positive button'%>

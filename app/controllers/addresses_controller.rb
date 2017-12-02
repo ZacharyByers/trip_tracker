@@ -4,9 +4,11 @@ class AddressesController < ApplicationController
 
   def new
     @address = @location.build_address
+    render 'edit_or_new'
   end
 
   def edit
+    render 'edit_or_new'
   end
 
   def create

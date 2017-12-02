@@ -7,9 +7,11 @@ class LocationsController < ApplicationController
 
   def new
     @location = @trip.locations.new
+    render 'edit_or_new'
   end
 
   def edit
+    render 'edit_or_new'
   end
 
   def create
