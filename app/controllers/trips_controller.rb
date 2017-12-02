@@ -10,9 +10,11 @@ class TripsController < ApplicationController
 
   def new
     @trip = current_user.trips.new
+    render 'edit_or_new'
   end
 
   def edit
+    render 'edit_or_new'
   end
 
   def create

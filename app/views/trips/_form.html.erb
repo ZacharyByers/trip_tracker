@@ -1,0 +1,8 @@
+<div class='container'>
+  <h1><%= @trip.id ? 'Edit Trip' : 'New Trip' %></h1>
+  <%= form_for [current_user, @trip] do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name, required: true %>
+  <br/>
+  <%= f.submit class: 'ui positive button'%>
+</div>
