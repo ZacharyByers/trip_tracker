@@ -13,6 +13,7 @@ gem 'jquery-rails'
 
 group :development, :test do
   gem 'pry'
+ 
 end
 
 group :development do
