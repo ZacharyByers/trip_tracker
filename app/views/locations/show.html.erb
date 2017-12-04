@@ -13,7 +13,7 @@
     <h4><%= @location.address.zip %></h4>
 
     <i>
-      <%= link_to 'Edit', edit_location_address_path(@location, @address), class: 'ui button tiny' %>
+      <%= link_to 'Edit', edit_location_address_path(@location, @location.address), class: 'ui button tiny' %>
     </i>
 <% else %>
   <h4><%= link_to 'New Address', new_location_address_path(@location), class: 'ui button tiny' %></h4>
