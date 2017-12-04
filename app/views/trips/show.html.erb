@@ -1,14 +1,26 @@
-<h1><%= @trip.name %></h1>
+<body class="clouds">
+  <div><img class="ui fluid image" src="/app/assets/clouds.png">
+    <h1><%= @trip.name %></h1>
 
+    <div class="ui centered card">
+      <div class="image">
+        <%=image_tag("plane.jpeg")%>
+      </div>
+      <div class="content">
+        <a class="header">
+          <% @trip.locations.each do |location| %>
+          <h3><%= link_to location.name, trip_location_path(@trip, location) %></h3>
+          <i>
+          <%= link_to 'Edit', edit_trip_location_path(@trip, location), class: 'ui button tiny' %>
+          <%= link_to 'Delete', trip_location_path(@trip, location),
+                                method: :delete,
+                                data: { confirm: 'Really Delete?' },
+                                class: 'ui button negative tiny' %>
+        </i>
+        <% end %>
+        </a>
+      </div>
+    </div>
+  </div>
+ </body>
 
-  <% @trip.locations.each do |location| %>
-    <h3><%= link_to location.name, trip_location_path(@trip, location) %></h3>
-    <i>
-      <%= link_to 'Edit', edit_trip_location_path(@trip, location), class: 'ui button tiny' %>
-      <%= link_to 'Delete', trip_location_path(@trip, location),
-                            method: :delete,
-                            data: { confirm: 'Really Delete?' },
-                            class: 'ui button negative tiny' %>
-    </i>
-  
-  <% end %>

@@ -1,20 +1,34 @@
-<h1><%= @location.name %></h1>
-<nav>
-  <%= link_to 'Edit', edit_trip_location_path(@location.trip_id, @location), class: 'ui button' %>
-  <%= link_to 'Delete', trip_location_path(@location.trip_id, @location),
-                        method: :delete,
-                        data: { confirm: 'Really Delete?' },
-                        class: 'ui negative button' %>
-</nav>
-<h3> Trip location: <%= link_to @trip.name, trip_path(@trip) %></h3>
+<body class="clouds">
+  <h1><%= @location.name %></h1>
+  <nav>
+    <%= link_to 'Edit', edit_trip_location_path(@location.trip_id, @location), class: 'ui button' %>
+    <%= link_to 'Delete', trip_location_path(@location.trip_id, @location),
+                          method: :delete,
+                          data: { confirm: 'Really Delete?' },
+                          class: 'ui negative button' %>
+  </nav>
+  <h3> Trip location: <%= link_to @trip.name, trip_path(@trip) %></h3>
+  <div class="ui centered card">
+    <div class="image">
+      <%=image_tag("plane.jpeg")%>
+    </div>
+    <div class="content">
+      <a class="header">
+        <h3> Trip location: <%= link_to @trip.name, trip_path(@trip) %></h3>
 
-<% if @location.address %>
-    <h4> <%= @location.address.street_address %></h4> 
-    <h4><%= @location.address.zip %></h4>
+        <% if @location.address %>
+          <h4> <%= @location.address.street_address %></h4> 
+          <h4><%= @location.address.zip %></h4>
 
-    <i>
-      <%= link_to 'Edit', edit_location_address_path(@location, @location.address), class: 'ui button tiny' %>
-    </i>
-<% else %>
-  <h4><%= link_to 'New Address', new_location_address_path(@location), class: 'ui button tiny' %></h4>
-<% end %>
+          <i>
+            <%= link_to 'Edit', edit_location_address_path(@location, @location.address), class: 'ui button tiny' %>
+          </i>
+        <% else %>
+          <h4><%= link_to 'New Address', new_location_address_path(@location), class: 'ui button tiny' %></h4>
+        <% end %>
+      </a>
+    </div>
+  </div>
+</body>
+
+
