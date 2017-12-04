@@ -9,13 +9,20 @@
   </head>
 
   <body>
-    <nav>
+    <div class='ui blue inverted compact menu'>
       <% if user_signed_in? %>
-        <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
+        <%= link_to 'Home', trips_path, class: 'menu item' %>
+        <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: 'menu item' %>
+        <%= link_to 'Account', edit_user_registration_path, class: 'menu item' %>
       <% else %>
-        <%= link_to 'Login', new_user_session_path %>
+        <%= link_to 'Login page', new_user_session_path, class: 'menu item' %>
       <% end %>
-    </nav>
+    </div>
+    <% flash.each do |type, message| %>
+      <div class='flash <%= type %>'>
+        <%= message %>
+      </div>
+    <% end %>
     <%= yield %>
   </body>
 </html>
