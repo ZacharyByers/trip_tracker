@@ -1,2 +1,27 @@
-<h1>Trips#index</h1>
-<p>Find me in app/views/trips/index.html.erb</p>
+<h1> Trips <h1>
+<% if @trips.any? %>
+<table class='ui table'>
+    <thead>
+        <tr>Locations</td>
+        </th class='colspan 3'></th>
+    </thead>
+ </table>
+
+<tbody>
+    <% @trips.each do |trip| %>
+          <tr>
+              <td><%=link_to trip.name, trip_path(trip) %></td>
+              <td><%=link_to 'Destroy',trip_path(trip), method: :delete, data: { confirm: 'Are you sure' } %></td>
+              <td><%=link_to 'Edit', edit_trip_path(trip) %></td>
+          </tr>
+      <% end %>
+       </tbody>
+     </table>
+   </table >
+<% else  %>
+    <h3> 'Plan your trip today (:'</h3>
+<% end %>
+
+<br>
+<%= link_to 'All Trips', trips_path, class: 'ui button'%>
+<%= link_to 'Plan Trip', new_trip_path, class: 'ui button red' %>
