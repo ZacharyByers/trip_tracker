@@ -16,7 +16,7 @@ class AddressesController < ApplicationController
     if @address.save
       redirect_to trip_location_path(@location.trip_id, @location)
     else
-      render :new
+      render 'edit_or_new'
     end
   end
 
@@ -24,7 +24,7 @@ class AddressesController < ApplicationController
     if @address.update(address_params)
       redirect_to trip_location_path(@location.trip_id, @location)
     else
-      render :edit
+      render 'edit_or_new'
     end
   end
 

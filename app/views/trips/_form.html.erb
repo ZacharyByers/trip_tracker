@@ -5,7 +5,7 @@
   <%= f.text_field :name, required: true %>
   <br/>
   <%= f.label :date %>
-  <%= f.date_field :date %>
+  <%= f.date_field :date, value: @trip.date %>
   <br/>
   <br/>
   <%= f.submit class: 'ui positive button'%>

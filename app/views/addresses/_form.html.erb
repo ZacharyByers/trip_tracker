@@ -1,5 +1,12 @@
 <div class='ui container'>
   <h1><%= @address.id ? 'Edit Address' : 'New Address' %></h1>
+  <% if @address.errors.any? %>
+    <div class='flash alert'>
+      <% @address.errors.each do |type, message| %>
+        <%= "#{type} #{message}" %>
+      <% end %>
+    </div>
+  <% end %>
   <%= form_for [@location, @address], html: {class: 'ui form'} do |f| %>
   <%= f.label :street_address %>
   <%= f.text_field :street_address, required: true %>

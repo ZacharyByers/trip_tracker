@@ -17,7 +17,7 @@
         <h3> Trip location: <%= link_to @trip.name, trip_path(@trip) %></h3>
 
         <% if @location.address %>
-          <h4> <%= @location.address.street_address %></h4> 
+          <h4> <%= @location.address.street_address %></h4>
           <h4><%= @location.address.zip %></h4>
 
           <i>
@@ -30,11 +30,3 @@
     </div>
   </div>
 </body>
-
-<<<<<<< HEAD
-=======
-<% if @location.address %>
-    <h4> <%= @location.address.street_address %></h4>
-    <h4><%= @location.address.zip %></h4>
->>>>>>> tweak
-
