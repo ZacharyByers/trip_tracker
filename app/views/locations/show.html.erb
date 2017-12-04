@@ -1,4 +1,5 @@
 <body class="clouds">
+
   <h1><%= @location.name %></h1>
   <nav>
     <%= link_to 'Edit', edit_trip_location_path(@location.trip_id, @location), class: 'ui button' %>
@@ -14,7 +15,6 @@
     </div>
     <div class="content">
       <a class="header">
-        <h3> Trip location: <%= link_to @trip.name, trip_path(@trip) %></h3>
 
         <% if @location.address %>
           <h4> <%= @location.address.street_address %></h4>
@@ -24,7 +24,7 @@
             <%= link_to 'Edit', edit_location_address_path(@location, @location.address), class: 'ui button tiny' %>
           </i>
         <% else %>
-          <h4><%= link_to 'New Address', new_location_address_path(@location), class: 'ui button tiny' %></h4>
+          <h4><%= link_to 'Add Address', new_location_address_path(@location), class: 'ui button tiny' %></h4>
         <% end %>
       </a>
     </div>

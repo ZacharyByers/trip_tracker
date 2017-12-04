@@ -1,23 +1,22 @@
-
+<div class='ui container'>
     <h1> Trips <h1>
     <% if @trips.any? %>
-    <table class='ui table'>
+    <table class='ui celled table'>
         <thead>
             <tr>Locations</td>
             </th class='colspan 3'></th>
         </thead>
-    </table>
 
     <tbody>
         <% @trips.each do |trip| %>
             <tr>
                 <td><%=link_to trip.name, trip_path(trip) %></td>
-                <td><%=link_to 'Destroy',trip_path(trip), method: :delete, data: { confirm: 'Are you sure' } %></td>
-                <td><%=link_to 'Edit', edit_trip_path(trip) %></td>
+                <td><%=link_to 'Edit', edit_trip_path(trip), class: 'ui primary button' %></td>
+                <td><%=link_to 'Destroy',trip_path(trip), method: :delete, data: { confirm: 'Are you sure?' }, class: 'ui negative button' %></td>
+
             </tr>
         <% end %>
-        </tbody>
-        </table>
+    </tbody>
     </table >
     <% else  %>
         <h3> 'Plan your trip today (:'</h3>
@@ -25,4 +24,5 @@
 
     <br>
     <%= link_to 'All Trips', trips_path, class: 'ui button'%>
-    <%= link_to 'Plan Trip', new_trip_path, class: 'ui button red' %>
+    <%= link_to 'Plan Trip', new_trip_path, class: 'ui button positive' %>
+</div>

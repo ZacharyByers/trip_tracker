@@ -8,7 +8,7 @@
     <%= javascript_include_tag 'application' %>
   </head>
 
-  <body>
+  <body class='clouds'>
     <div class='ui blue inverted compact menu'>
       <% if user_signed_in? %>
         <%= link_to 'Home', trips_path, class: 'menu item' %>
